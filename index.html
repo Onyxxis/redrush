@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>ZED – LOMÉ RUSH</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="bg"></div><div id="shade"></div>
+<canvas id="c"></canvas>
+
+<section id="menu" class="screen on">
+  <div class="logo"><small>ZEMIDJAN ARCADE</small><h1>ZED<span>LOMÉ RUSH</span></h1></div>
+  <canvas id="hero" width="360" height="300"></canvas>
+  <div class="btns">
+    <button id="bPlay" class="big">JOUER</button>
+    <button id="bHow">COMMENT JOUER</button>
+    <button id="bSnd">SON : ACTIVÉ</button>
+  </div>
+  <div class="flag"><i></i><i></i><i></i></div>
+</section>
+
+<section id="how" class="screen">
+  <div class="panel">
+    <h2>COMMENT JOUER</h2>
+    <p>Fonce dans les rues de Lomé, évite la circulation et ramasse un maximum d'<b>Ayimolou</b> !</p>
+    <ul>
+      <li><b>← →</b> ou <b>A / D</b> : changer de voie</li>
+      <li><b>↑</b> accélérer · <b>↓</b> ralentir</li>
+      <li>Mobile : touche la moitié gauche / droite de l'écran</li>
+      <li>3 vies. Une collision en retire une (courte protection ensuite).</li>
+      <li>Frôle les véhicules pour des points bonus.</li>
+      <li><b>5 Ayimolou = INVINCIBLE 30 s</b> : fonce dans le tas !</li>
+      <li>Attention aux motos qui arrivent à contre-sens.</li>
+    </ul>
+    <button id="bHowBack" class="big">RETOUR</button>
+  </div>
+</section>
+
+<section id="select" class="screen">
+  <h2>CHOISIS TON MOTARD</h2>
+  <div class="modes"><button id="bDay" class="mode on">☀️ JOUR</button><button id="bNight" class="mode">🌙 NUIT</button></div>
+  <div id="cards"></div>
+  <div class="btns row"><button id="bSelBack">RETOUR</button><button id="bGo" class="big">C'EST PARTI !</button></div>
+</section>
+
+<section id="hud">
+  <div class="top">
+    <div class="stat"><label>SCORE</label><b id="hSc">0</b></div>
+    <div class="stat"><label>DISTANCE</label><b id="hDi">0 m</b></div>
+    <div class="stat"><label>VITESSE</label><b id="hSp">0 km/h</b></div>
+  </div>
+  <div class="side">
+    <div id="hearts"></div>
+    <div class="ay"><img src="assets/ayimolou.png" alt=""><b id="hAy">0</b><span id="pips"></span></div>
+  </div>
+  <div id="inv"><span>INVINCIBLE</span><b id="invT">30</b><div><i id="invBar"></i></div></div>
+  <div id="pop"></div>
+</section>
+
+<div id="light"><div class="lamps"><i id="lr"></i><i id="lg"></i></div><b id="cnt">3</b></div>
+
+<section id="over" class="screen">
+  <div class="panel">
+    <h2>GAME OVER</h2>
+    <div class="who" id="oWho"></div>
+    <div class="grid">
+      <div><label>SCORE</label><b id="oSc"></b></div>
+      <div><label>DISTANCE</label><b id="oDi"></b></div>
+      <div><label>RECORD</label><b id="oBest"></b></div>
+      <div><label>AYIMOLOU</label><b id="oAy"></b></div>
+    </div>
+    <div id="newrec">NOUVEAU RECORD !</div>
+    <div class="btns row"><button id="bRetry" class="big">REJOUER</button><button id="bMenu">MENU PRINCIPAL</button></div>
+  </div>
+</section>
+<script src="js/game.js"></script>
+</body>
+</html>
